@@ -6,3 +6,13 @@ lazy val root = (project in file("."))
   .settings(
     name := "scala-type-classes-intro"
   )
+
+val catsVersion = "2.1.1"
+
+libraryDependencies ++= Seq(
+  "org.typelevel" %% "cats-core" % catsVersion
+)
+
+scalacOptions ++= Seq(
+  "-language:higherKinds"
+)
