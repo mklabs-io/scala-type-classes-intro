@@ -56,11 +56,15 @@ and, on the other hand, for reviewing a dish the following strategy:
 
 ```scala
 
-  object RestaurantReviewer extends Reviewer[Restaurant] {
-    override def rate(obj: Restaurant): Int =
-      scala.math
-        .round(0.6F * obj.foodQuality + 0.3F * obj.environment + 0.1F * obj.location)
-  }
+    object DishReviewer extends Reviewer[Dish] {
+      override def rate(obj: Dish): Int = scala.math.round(
+        0.1F * obj.sweetness
+          + 0.2F * obj.saltiness
+          + 0.1F * obj.bitterness
+          + 0.1F * obj.sourness
+          + 0.5F * obj.umami
+      )
+    }
 
 ```
 
